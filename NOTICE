@@ -1,0 +1,32 @@
+QuickMon Forever
+Copyright (C) 2026 Tyson Flint
+
+QuickMon Forever is free software: you can redistribute it and/or modify it under the terms of
+the GNU General Public License as published by the Free Software Foundation, either version 3
+of the License, or (at your option) any later version. See the LICENSE file.
+
+
+ADDITIONAL TERM UNDER SECTION 7(b) OF THE GNU GENERAL PUBLIC LICENSE, VERSION 3
+
+QuickMon Forever is a rewrite of QuickMon 1.10, the Windows NT Performance Monitor screen saver
+written by Tim Hill in 1998. It contains no code from the original QuickMon, which remains
+Copyright (c) 1998 Tim Hill, all rights reserved.
+
+As permitted by section 7(b) of the GNU General Public License, version 3, the following
+author attributions must be preserved in every copy and every modified version of QuickMon
+Forever, and in any work based on it:
+
+  1. An attribution stating that the program is based on QuickMon 1.10 by Tim Hill (1998),
+     for example: "Based on QuickMon 1.10 by Tim Hill (1998)."
+
+  2. The copyright notice of Tyson Flint: "Copyright (C) 2026 Tyson Flint."
+
+These attributions must be kept:
+
+  - in the program's documentation (such as its README), and
+  - wherever the program displays its Appropriate Legal Notices, as defined in section 0 of
+    the license (in QuickMon Forever, its About box).
+
+Modified versions may add their own credits and copyright notices alongside these, but may not
+remove or obscure them. This term only requires that these attributions be kept; it does not
+place any other restriction on the rights the GNU General Public License grants.

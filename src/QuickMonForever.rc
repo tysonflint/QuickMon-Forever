@@ -1,0 +1,115 @@
+// QuickMonForever.rc - resources for the QuickMon Forever screen saver
+#include <windows.h>
+#include "resource.h"
+
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+
+CREATEPROCESS_MANIFEST_RESOURCE_ID RT_MANIFEST "QuickMonForever.manifest"
+
+IDI_APP ICON "QuickMonForever.ico"
+// Indexes 1-109: colored and rounded charts and settings icons, from tools\MakeIcons.ps1.
+#include "icons.rc2"
+
+STRINGTABLE
+BEGIN
+    IDS_DESCRIPTION "QuickMon Forever"
+END
+
+// Layout follows the original "Quick Monitor Screen Saver Setup 1.10" dialog.
+IDD_CONFIG DIALOGEX 0, 0, 326, 394
+STYLE DS_SETFONT | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "QuickMon Forever Screen Saver Setup"
+FONT 9, "Segoe UI", 400, 0, 0x1
+BEGIN
+    GROUPBOX        "Setti&ngs for", -1, 7, 8, 240, 92
+    COMBOBOX        IDC_COUNTER, 56, 4, 64, 200, CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    AUTOCHECKBOX    "", IDC_ENABLED, 15, 24, 228, 10, WS_TABSTOP
+    LTEXT           "L&ine Color:", -1, 15, 44, 50, 8
+    COMBOBOX        IDC_COLOR, 70, 42, 64, 200, CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "", IDC_SWATCH, 138, 42, 12, 12, SS_SUNKEN
+    PUSHBUTTON      "E&xplain...", IDC_EXPLAIN, 170, 41, 68, 15
+    LTEXT           "Sca&le:", -1, 15, 63, 50, 8
+    COMBOBOX        IDC_SCALE, 70, 61, 64, 200, CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "&Browse...", IDC_BROWSE, 170, 60, 68, 15
+    AUTOCHECKBOX    "&32-bit counter (read through the 32-bit counter providers)", IDC_USE32, 15, 84, 228, 10, WS_TABSTOP
+
+    DEFPUSHBUTTON   "OK", IDOK, 256, 8, 63, 15
+    PUSHBUTTON      "Cancel", IDCANCEL, 256, 28, 63, 15
+    PUSHBUTTON      "Set Default", IDC_SETDEFAULT, 256, 48, 63, 15
+    PUSHBUTTON      "Clear Default", IDC_CLEARDEFAULT, 256, 68, 63, 15
+    PUSHBUTTON      "&Preview", IDC_PREVIEW, 256, 88, 63, 15
+
+    GROUPBOX        "General Settings", -1, 7, 108, 150, 202
+    LTEXT           "&Display Type:", -1, 15, 124, 52, 8
+    COMBOBOX        IDC_DISPLAY, 70, 122, 80, 100, CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Refres&h Rate:", -1, 15, 143, 52, 8
+    COMBOBOX        IDC_REFRESH, 70, 141, 80, 200, CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "&Window Size:", -1, 15, 162, 52, 8
+    COMBOBOX        IDC_WINSIZE, 70, 160, 80, 200, CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Monitor:", -1, 15, 181, 52, 8
+    COMBOBOX        IDC_MONITOR, 70, 179, 80, 200, CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "&Move Speed:", -1, 15, 200, 52, 8
+    COMBOBOX        IDC_MOVE, 70, 198, 80, 100, CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Mo&vement:", -1, 15, 219, 52, 8
+    COMBOBOX        IDC_MOVESTYLE, 70, 217, 80, 100, CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Start P&osition:", -1, 15, 238, 54, 8
+    COMBOBOX        IDC_STARTPOS, 70, 236, 80, 100, CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "&Grid Color:", -1, 15, 257, 52, 8
+    COMBOBOX        IDC_GRIDCOLOR, 70, 255, 64, 200, CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "", IDC_GRIDSWATCH, 138, 255, 12, 12, SS_SUNKEN
+    LTEXT           "&Frame:", -1, 15, 276, 52, 8
+    COMBOBOX        IDC_FRAME, 70, 274, 80, 100, CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Scale-up dela&y (s):", -1, 15, 295, 60, 8
+    EDITTEXT        IDC_AUTOSCALE, 80, 293, 40, 13, ES_NUMBER
+
+    GROUPBOX        "S&chemes", -1, 165, 108, 154, 58
+    COMBOBOX        IDC_SCHEME, 172, 123, 140, 200, CBS_DROPDOWN | CBS_SORT | CBS_AUTOHSCROLL | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "&Save", IDC_SAVE, 172, 143, 64, 15
+    PUSHBUTTON      "Delete", IDC_DELETE, 248, 143, 64, 15
+
+    LTEXT           "Browse Det&ail:", -1, 172, 181, 52, 8
+    COMBOBOX        IDC_DETAIL, 228, 179, 91, 100, CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "", IDC_DETAILINFO, 172, 195, 147, 18, SS_NOTIFY
+    LTEXT           "&Theme:", -1, 172, 226, 52, 8
+    COMBOBOX        IDC_THEME, 228, 224, 91, 100, CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    // The four Hide boxes are one group: Alt+Q reaches the first, the arrow keys move between them.
+    AUTOCHECKBOX    "Hide the &QuickMon Forever name", IDC_HIDETITLE, 172, 242, 147, 10, WS_GROUP | WS_TABSTOP
+    AUTOCHECKBOX    "Hide the computer name", IDC_HIDEHOST, 172, 254, 147, 10, WS_TABSTOP
+    AUTOCHECKBOX    "Hide the IP address", IDC_HIDEIP, 172, 266, 147, 10, WS_TABSTOP
+    AUTOCHECKBOX    "Hide the computer name in counter names", IDC_HIDECTRHOST, 172, 278, 147, 10, WS_TABSTOP
+    LTEXT           "Comput&er name:", -1, 172, 293, 147, 8
+    COMBOBOX        IDC_HOSTNAME, 172, 303, 147, 100, CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "IP address (IPv&4 / IPv6):", -1, 172, 322, 147, 8
+    COMBOBOX        IDC_IPADDR, 172, 332, 147, 100, CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Abo&ut...", IDC_ABOUT, 256, 353, 63, 15
+
+    LTEXT           "", IDC_VERSION, 7, 373, 312, 17
+END
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 2,10,0,0
+ PRODUCTVERSION 2,10,0,0
+ FILEFLAGSMASK 0x3fL
+ FILEOS VOS_NT_WINDOWS32
+ FILETYPE VFT_APP
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "CompanyName", "Tyson Flint"
+            VALUE "FileDescription", "QuickMon Forever Screen Saver"
+            VALUE "FileVersion", "2.10"
+            VALUE "InternalName", "QuickMonForever"
+            VALUE "LegalCopyright", "Copyright (c) 2026 Tyson Flint. GNU GPL v3 or later."
+            VALUE "OriginalFilename", "QuickMonForever.scr"
+            VALUE "ProductName", "QuickMon Forever"
+            VALUE "ProductVersion", "2.10"
+            VALUE "Comments", "Rewritten by Tyson Flint. Successor to QuickMon 1.10, originally written by Tim Hill (1998). Contains no original QuickMon code."
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
