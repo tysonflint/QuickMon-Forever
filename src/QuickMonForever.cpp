@@ -90,7 +90,7 @@ static const wchar_t VERSION_STR[] =
     L"QuickMon Forever v2.10 (2026) by Tyson Flint\n"
     L"Revives QuickMon v1.10 (1998) by Tim Hill. Long live QuickMon.";
 static const wchar_t ABOUT_TEXT[] =
-    L"QuickMon Forever, version 2.10\n"
+    L"QuickMon Forever, version 2.10 (build " QM_BUILD_STR ")\n"
     L"Performance Monitor screen saver for Windows 10 and later\n\n"
     L"Revives QuickMon 1.10, the \"QuickMon Performance\n"
     L"Monitor Screen Saver for Windows NT\",\n"

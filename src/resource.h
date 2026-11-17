@@ -1,6 +1,12 @@
 // resource.h - QuickMon Forever resource identifiers
 #pragma once
 
+// Build number within version 2.10. The version stays 2.10 (after the original's 1.10); raise
+// QM_BUILD and QM_BUILD_STR together for each new download of 2.10. Build 1 was the first
+// published 2.10, which had no build number.
+#define QM_BUILD            2
+#define QM_BUILD_STR        "2"
+
 #define IDS_DESCRIPTION     1      // Screen saver name shown in Screen Saver Settings
 
 #define IDD_CONFIG          101

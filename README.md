@@ -2,7 +2,9 @@
 
 **Version 2.10**: the successor to **QuickMon 1.10**, the Windows NT/XP screen saver that charts
 Performance Monitor counters, rewritten for Windows 10 and later. The version number
-echoes the original's 1.10.
+echoes the original's 1.10, so updates keep it and get a new **build number** instead: it is
+shown in the About box (for example "version 2.10 (build 2)") and in the file's
+Properties → Details. The first 2.10 download had no build number.
 
 ```text
 1998  QuickMon v1.10 by Tim Hill

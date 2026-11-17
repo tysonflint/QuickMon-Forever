@@ -87,7 +87,7 @@ BEGIN
 END
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 2,10,0,0
+ FILEVERSION 2,10,0,QM_BUILD
  PRODUCTVERSION 2,10,0,0
  FILEFLAGSMASK 0x3fL
  FILEOS VOS_NT_WINDOWS32
@@ -99,7 +99,7 @@ BEGIN
         BEGIN
             VALUE "CompanyName", "Tyson Flint"
             VALUE "FileDescription", "QuickMon Forever Screen Saver"
-            VALUE "FileVersion", "2.10"
+            VALUE "FileVersion", "2.10 (build " QM_BUILD_STR ")"
             VALUE "InternalName", "QuickMonForever"
             VALUE "LegalCopyright", "Copyright (c) 2026 Tyson Flint. GNU GPL v3 or later."
             VALUE "OriginalFilename", "QuickMonForever.scr"
